@@ -1,6 +1,7 @@
 (ns crimpjure.core
   (:require [cheshire.core :as json]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [pandect.algo.md5 :as digest]))
 
 (defn listy? [obj]
   (or (seq? obj) (vector? obj) (list? obj)))
@@ -21,3 +22,6 @@
 (defn notation [json]
   (let [parsed (json/parse-string json true)]
     (notate parsed)))
+
+(defn signature [json]
+  (digest/md5 (notation json)))
