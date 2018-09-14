@@ -1,4 +1,4 @@
-(defproject crimpjure "0.0.1-SNAPSHOT"
+(defproject crimpure "0.0.1-SNAPSHOT"
   :description "A clojure implementation of Crimp"
   :dependencies [[org.clojure/clojure "1.9.0"] [cheshire "5.8.0"] [pandect "0.6.1"]]
   :profiles {:dev {:dependencies [[midje "1.9.2"]]}

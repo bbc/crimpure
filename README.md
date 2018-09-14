@@ -1,6 +1,6 @@
-# crimpjure
+# crimpure
 
-This is a clojure implementation of [Crimp](https://github.com/BBC-News/crimp), the BBC News arbitrary data structure hashing tool.
+This is a Clojure implementation of [Crimp](https://github.com/BBC-News/crimp), the BBC News arbitrary data structure hashing tool.
 
 The `notate` method returns a string showing the flattened and simplified data structure
 

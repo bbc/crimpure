@@ -1,4 +1,4 @@
-(ns crimpjure.core
+(ns crimpure.core
   (:require [cheshire.core :as json]
             [clojure.string :as str]
             [pandect.algo.md5 :as digest]))

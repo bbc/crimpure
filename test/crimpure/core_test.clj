@@ -1,9 +1,9 @@
-(ns crimpjure.core-test
+(ns crimpure.core-test
   (:require [midje.sweet :refer :all]
-            [crimpjure.core :refer :all]
+            [crimpure.core :refer :all]
             [cheshire.core :refer :all]))
 
-(facts "about `crimpjure/notation`"
+(facts "about `crimpure/notation`"
        (fact "given a json null it returns a hyphen"
              (notation (generate-string nil)) => "_")
        (fact "given a json string it returns the string with an S suffix"
@@ -31,7 +31,7 @@
        (fact "given a json nested array it returns all the array items with their suffix in the right order"
              (notation (generate-string {:a {:c nil, :2 2}})) => "aS2S2NA_cSAHAH"))
 
-(facts "about `crimpjure/signature`"
+(facts "about `crimpure/signature`"
        (fact "given a json null it returns a hyphen"
              (signature (generate-string nil)) => "b14a7b8059d9c055954c92674ce60032")
        (fact "given a json string it returns the string with an S suffix"
