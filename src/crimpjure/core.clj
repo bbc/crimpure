@@ -3,17 +3,13 @@
             [clojure.string :as str]
             [pandect.algo.md5 :as digest]))
 
-(defn listy? [obj]
-  (or (seq? obj) (vector? obj) (list? obj)))
-
 (defn- map-entry-to-seq [me]
   (seq [(name (key me)) (val me)]))
 
 (defn- notate [obj]
   (cond
     (map-entry? obj) (notate (map-entry-to-seq obj))
-    (map? obj) (str (str/join (map notate (sort-by str obj))) "H")
-    (listy? obj) (str (str/join (map notate (sort-by str obj))) "A")
+    (coll? obj) (str (str/join (map notate (sort-by str obj))) (if (map? obj) "H" "A"))
     (boolean? obj) (str obj "B")
     (number? obj) (str obj "N")
     (string? obj) (str (name obj) "S")
