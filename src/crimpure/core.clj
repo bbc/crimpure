@@ -8,8 +8,8 @@
 
 (defn notation [obj]
   (cond
-    (map-entry? obj) (notate (map-entry-to-seq obj))
-    (coll? obj) (str (str/join (map notate (sort-by str obj))) (if (map? obj) "H" "A"))
+    (map-entry? obj) (notation (map-entry-to-seq obj))
+    (coll? obj) (str (str/join (map notation (sort-by str obj))) (if (map? obj) "H" "A"))
     (boolean? obj) (str obj "B")
     (number? obj) (str obj "N")
     (string? obj) (str (name obj) "S")
